@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+#app{
+    background-color: #2d3339;
+    color: white;
+}
