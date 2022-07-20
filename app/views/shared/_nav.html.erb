@@ -9,9 +9,15 @@
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="#">Home</a>
         </li>
+        <%# if user isnt signed in %>
+        <%if !user_signed_in?%>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <%=link_to "Sign Up", "/users/sign_up", class: "nav-link"%>
         </li>
+        <li class="nav-item">
+          <%=link_to "Sign In", "/users/sign_in", class: "nav-link"%>
+        </li>
+        <%end %>
         <%# <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
