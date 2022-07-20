@@ -27,8 +27,9 @@
   </div>
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
+    <%# <%= form.label :user_id %>
+     <%# <%= form.number_field :user_id %>
+    <%=form.hidden_field :user_id, :value => current_user.id%>
   </div>
 
   <div class="actions">
