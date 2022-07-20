@@ -11,15 +11,15 @@
       <h2><%= post.title %></h2>
       <p>By <%=User.find_by_id(post.user_id).email%> | <%= post.lang %><p>
       
-      <code class = "language-<%=post.lang%> p-1"><%= post.content %></code><br><br>
-      
+      <pre><code class = "language-<%=post.lang%> p-1" style="width:100%"><%= post.content %></code></pre>
+      <%if post.user_id == current_user.id%>
       <%= link_to 'Show', post %> | <%= link_to 'Edit', edit_post_path(post) %> | <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%end%>
     </div>
-
-
+    <br><br>
   <% end %>
   
 
-<br>
+
 
 
