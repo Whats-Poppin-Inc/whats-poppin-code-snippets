@@ -17,6 +17,10 @@
         <li class="nav-item">
           <%=link_to "Sign In", "/users/sign_in", class: "nav-link"%>
         </li>
+        <% elsif user_signed_in? %>
+            <li class="nav-item">
+                <%=link_to "Sign Out", "/users/sign_out", method: "delete", class: "nav-link"%>
+            </li>
         <%end %>
         <%# <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
