@@ -7,11 +7,14 @@
   <%# <% @posts.each do |post| %> 
 
   <%@posts.reverse.each do |post|%>
+    <%
+    post_username = User.find_by_id(post.user_id).email.match(/^.*(?=@)/)
     
+    %>
 
     <div class="container text-light">
       <h2><%= post.title %></h2>
-      <p>By <%=User.find_by_id(post.user_id).email%> | <%= post.lang %><p>
+      <p>By <%=post_username%> | <%= post.lang %><p>
       
       <pre class = "line-numbers" data-start="1"><code class = "language-<%=post.lang%> p-1" style="width:100%"><%= post.content %></code></pre>
       <%if post.user_id == current_user.id%>
