@@ -5,7 +5,7 @@
 
 * Rails version: 6.1.6
 
-* SQLite3 version: 1.4 
+* Postgres version: 14
 
 
 Live @ https://whats-poppin-code-snippets.herokuapp.com/
