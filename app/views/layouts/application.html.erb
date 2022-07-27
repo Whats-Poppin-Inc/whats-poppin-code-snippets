@@ -19,7 +19,10 @@
 
   <body id = "app">
     <%= render "shared/nav" %>
-      
+    <div class="m-3">
+      <p class="notice text-center"><%= notice %></p>
+      <p class="alert text-center"><%= alert %></p>
+    </div>
     <%= yield %>
   </body>
 </html>
