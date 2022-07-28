@@ -1,24 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div class = "container">
 
 <p>
-  <strong>Title:</strong>
-  <%= @post.title %>
+  <h2>Title: <%= @post.title %></h2>
 </p>
 
 <p>
   <strong>Content:</strong>
-  <%= @post.content %>
+  <pre class = "line-numbers" data-start="1"><code class = "language-<%=@post.lang%> p-1" style="width:100%"><%= @post.content %></code></pre>
 </p>
 
 <p>
   <strong>Lang:</strong>
   <%= @post.lang %>
 </p>
-
-<p>
-  <strong>User:</strong>
-  <%= @post.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
+<%if user_signed_in? && @post.user_id == current_user.id%>
+  <%= link_to 'Edit', edit_post_path(@post) %> |  
+<%end%>
 <%= link_to 'Back', posts_path %>
+</div>

@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!, except: [:index,:show]
+  before_action :check_user, only: [:edit, :destroy]
   # GET /posts or /posts.json
   def index
     @posts = Post.all
@@ -66,5 +67,13 @@ class PostsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def post_params
       params.require(:post).permit(:title, :content, :lang, :user_id)
+    end
+
+    def check_user
+      if current_user.id == @post.user_id
+      else        
+        flash[:notice] = "You cannot alter this post"
+        redirect_to "/posts"
+      end
     end
 end
