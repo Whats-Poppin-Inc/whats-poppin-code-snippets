@@ -69,6 +69,7 @@ class PostsController < ApplicationController
       params.require(:post).permit(:title, :content, :lang, :user_id)
     end
 
+    #Allow only  user who wrote the post to edit or destroy the post
     def check_user
       if current_user.id == @post.user_id
       else        

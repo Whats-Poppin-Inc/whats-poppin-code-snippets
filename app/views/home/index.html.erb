@@ -1,4 +1,10 @@
-<div class = "container">
+<div class = "container text-center">
     
-    <h1 class = "text-center">What's Poppin Code Snippets</h1>
+    <h1 class = "">What's Poppin Code Snippets</h1>
+    
+    <span class = "p-3"><%=link_to "View Posts", "/posts", class: "btn btn-primary"%></span>
+
+    <%if user_signed_in?%>
+        <%= link_to 'Create a New Post', new_post_path, class: "btn btn-primary" %>
+    <%end%>
 </div>
