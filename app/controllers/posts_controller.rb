@@ -6,6 +6,9 @@ class PostsController < ApplicationController
   # GET /posts or /posts.json
   def index
     @posts = Post.all
+    set_meta_tags title: 'Posts',
+              description: 'Code Snippet Sharing Website by What\'s Poppin? Inc.',
+              keywords: 'Code, Snippets, Code Snippets, What\'s Poppin?, Poppin'
   end
 
   # GET /posts/1 or /posts/1.json

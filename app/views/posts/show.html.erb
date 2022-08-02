@@ -1,3 +1,11 @@
+<%
+  post_username = User.find_by_id(@post.user_id).email.match(/^.*(?=@)/)
+%>
+<% set_meta_tags title: @post.title + ' by ' +  post_username.to_s,
+              description: @post.content,
+              keywords: 'Code, Snippets, Code Snippets, What\'s Poppin?, Poppin' %>
+
+
 <div class = "container">
 
 <p>

@@ -7,6 +7,8 @@ gem 'devise'
 
 gem 'simple_form'
 
+gem 'meta-tags'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.6'
 # Use sqlite3 as the database for Active Record
