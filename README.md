@@ -8,4 +8,4 @@
 * Postgres version: 14
 
 
-Live @ https://whats-poppin-code-snippets.herokuapp.com/
+Live @ https://code.poppin.dev/ & https://whats-poppin-code-snippets.herokuapp.com/
